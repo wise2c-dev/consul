@@ -5,11 +5,11 @@ services:
 
 after_success:
   # 当代码测试通过后执行的命令
-  - docker build -t wise2c/consul .
+  - docker build -t wisecloud/consul .
 
 deploy:
   provider: script
-  script: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD && docker push wise2c/consul:$TRAVIS_BRANCH
+  script: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD && docker push wisecloud/consul:$TRAVIS_BRANCH
   on:
     all_branches: true
     condition: "$TRAVIS_BRANCH =~ ^v[0-9]+\\.[0-9]+(\\.[0-9]+)?(-\\S*)?$"
