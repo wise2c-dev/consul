@@ -5,7 +5,7 @@ services:
 
 after_success:
   # 当代码测试通过后执行的命令
-  - docker build -t wisecloud/consul .
+  - docker build -t wisecloud/consul:$TRAVIS_BRANCH .
 
 deploy:
   provider: script
